@@ -6,7 +6,8 @@
 #include <fcntl.h>
 #include <io.h>
 #include <iostream>
-#include <fstream>
+#include <fstream> 
+#include <random>
 using namespace::std;
 /** We need this to easily convert between pixel and real-world coordinates*/
 static const float SCALE = 30.f;

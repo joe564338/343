@@ -13,12 +13,16 @@
   <ItemGroup>
     <ClCompile Include="level.cpp" />
     <ClCompile Include="leveltest.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="TEST.cpp" />
     <ClCompile Include="tinystr.cpp" />
     <ClCompile Include="tinyxml.cpp" />
     <ClCompile Include="tinyxmlerror.cpp" />
     <ClCompile Include="tinyxmlparser.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EnemyRobot.h" />
     <ClInclude Include="level.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="tinystr.h" />

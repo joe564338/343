@@ -10,9 +10,10 @@ using namespace::std;
 void RedirectIOToConsole();
 int main()
 {
+	string filepath = "C:/Users/Joseph/Documents/Visual Studio 2013/Projects/343projbetter/testmap.tmx";
 	RedirectIOToConsole();
 	Level level;
-	level.LoadFromFile("testmap.tmx");
+	level.LoadFromFile(filepath);
 
 	sf::RenderWindow window;
 	window.create(sf::VideoMode(800, 600), "Level.h test");
