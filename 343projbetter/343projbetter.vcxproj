@@ -12,7 +12,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="level.cpp" />
-    <ClCompile Include="leveltest.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="TEST.cpp" />
     <ClCompile Include="tinystr.cpp" />

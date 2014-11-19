@@ -34,3 +34,14 @@ int Player::GetLives(){
 int Player::GetScore(){
 	return mScore;
 }
+void Player::AddFuel(){
+	if (mFuel < 50){
+		mFuel += FUEL_CAN;
+	}
+	else{
+		mFuel = MAX_FUEL;
+	}
+}
+sf::Sprite Player::getSprite(){
+	return PlayerSprite;
+}

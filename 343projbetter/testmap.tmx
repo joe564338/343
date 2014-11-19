@@ -1812,14 +1812,14 @@
   </data>
  </layer>
  <objectgroup name="collision">
-  <object x="120" y="660" width="600" height="30"/>
-  <object x="690" y="690" width="60" height="30"/>
-  <object x="600" y="600" width="30" height="60"/>
-  <object x="870" y="540" width="30" height="360"/>
-  <object x="870" y="30" width="30" height="510"/>
-  <object x="0" y="0" width="900" height="30"/>
-  <object x="0" y="30" width="30" height="540"/>
-  <object x="0" y="570" width="30" height="330"/>
-  <object x="30" y="870" width="840" height="30"/>
+  <object name="Collision" x="120" y="660" width="600" height="30"/>
+  <object name="Collision" x="690" y="690" width="60" height="30"/>
+  <object name="Collision" x="600" y="600" width="30" height="60"/>
+  <object name="Collision" x="870" y="540" width="30" height="360"/>
+  <object name="Collision" x="870" y="30" width="30" height="510"/>
+  <object name="Collision" x="0" y="0" width="900" height="30"/>
+  <object name="Collision" x="0" y="30" width="30" height="540"/>
+  <object name="Collision" x="0" y="570" width="30" height="330"/>
+  <object name="Collision" x="30" y="870" width="840" height="30"/>
  </objectgroup>
 </map>

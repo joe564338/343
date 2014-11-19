@@ -232,7 +232,7 @@ bool Level::LoadFromFile(std::string filename)
 
 	return true;
 }
-Object Level::GetObject(std::string name)
+Object Level::GetObjectPlayer(std::string name)
 {
 	for (int i = 0; i < objects.size(); i++)
 	if (objects[i].name == name)

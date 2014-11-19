@@ -1,29 +1,23 @@
-﻿Build started 11/17/2014 11:17:03 AM.
+﻿Build started 11/18/2014 10:41:54 PM.
      1>Project "C:\Users\Joseph\Documents\Visual Studio 2013\Projects\343projbetter\343projbetter\343projbetter.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Joseph\Documents\libraries\SFML-2.1\include" /IC:\Users\Joseph\Documents\libraries\Box2D_v2.3.0\Box2D\Box2D /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D SFML_DYNAMIC /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt level.cpp
-         level.cpp
-     1>c:\users\joseph\documents\visual studio 2013\projects\343projbetter\343projbetter\level.cpp(13): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\joseph\documents\visual studio 2013\projects\343projbetter\343projbetter\level.cpp(84): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\joseph\documents\visual studio 2013\projects\343projbetter\343projbetter\level.cpp(85): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\joseph\documents\visual studio 2013\projects\343projbetter\343projbetter\level.cpp(122): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\joseph\documents\visual studio 2013\projects\343projbetter\343projbetter\level.cpp(175): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\joseph\documents\visual studio 2013\projects\343projbetter\343projbetter\level.cpp(237): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\joseph\documents\visual studio 2013\projects\343projbetter\343projbetter\level.cpp(245): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\joseph\documents\visual studio 2013\projects\343projbetter\343projbetter\level.cpp(259): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\joseph\documents\visual studio 2013\projects\343projbetter\343projbetter\level.cpp(260): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\joseph\documents\visual studio 2013\projects\343projbetter\343projbetter\level.cpp(240): warning C4715: 'Level::GetObject' : not all control paths return a value
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Joseph\Documents\libraries\SFML-2.1\include" /IC:\Users\Joseph\Documents\libraries\Box2D_v2.3.0\Box2D\Box2D /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D SFML_DYNAMIC /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt TEST.cpp
+         TEST.cpp
+     1>c:\users\joseph\documents\visual studio 2013\projects\343projbetter\343projbetter\test.cpp(43): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\joseph\documents\visual studio 2013\projects\343projbetter\343projbetter\test.cpp(48): warning C4244: 'argument' : conversion from 'int' to 'float32', possible loss of data
+     1>c:\users\joseph\documents\visual studio 2013\projects\343projbetter\343projbetter\test.cpp(51): warning C4244: 'argument' : conversion from 'int' to 'float32', possible loss of data
+     1>c:\users\joseph\documents\visual studio 2013\projects\343projbetter\343projbetter\test.cpp(71): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Joseph\Documents\Visual Studio 2013\Projects\343projbetter\Debug\343projbetter.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Joseph\Documents\libraries\SFML-2.1\lib" "sfml-graphics-d.lib" "sfml-window-d.lib" "sfml-system-d.lib" "sfml-main-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib Box2D.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Joseph\Documents\Visual Studio 2013\Projects\343projbetter\Debug\343projbetter.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Joseph\Documents\Visual Studio 2013\Projects\343projbetter\Debug\343projbetter.lib" /MACHINE:X86 Debug\level.obj
-         Debug\leveltest.obj
+         Debug\Player.obj
+         Debug\TEST.obj
          Debug\tinystr.obj
          Debug\tinyxml.obj
          Debug\tinyxmlerror.obj
          Debug\tinyxmlparser.obj
-     1>sfml-main-d.lib(SFML_Main.cpp.obj) : warning LNK4099: PDB 'sfml-main-d.pdb' was not found with 'sfml-main-d.lib(SFML_Main.cpp.obj)' or at 'C:\Users\Joseph\Documents\Visual Studio 2013\Projects\343projbetter\Debug\sfml-main-d.pdb'; linking object as if no debug info
          343projbetter.vcxproj -> C:\Users\Joseph\Documents\Visual Studio 2013\Projects\343projbetter\Debug\343projbetter.exe
      1>Done Building Project "C:\Users\Joseph\Documents\Visual Studio 2013\Projects\343projbetter\343projbetter\343projbetter.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:02.47
+Time Elapsed 00:00:03.33

@@ -3,6 +3,8 @@
 #include <iostream>
 #include <SFML\Graphics.hpp> 
 using namespace::std;
+const int FUEL_CAN = 50;
+const int MAX_FUEL = 100;
 class Player{
 private:
 	int mLives;
@@ -13,7 +15,7 @@ private:
 	sf::Texture PlayerTexture;
 	sf::Sprite PlayerSprite;
 public:
-	Player() : mFuel(0), mXPosition(400), mYPosition(400), mLives(3), mScore(0) {
+	Player() : mFuel(0), mXPosition(800), mYPosition(800), mLives(3), mScore(0) {
 		cout << "Game Start" << endl;
 	}
 	virtual ~Player() {
@@ -28,5 +30,7 @@ public:
 	int GetFuel();
 	int GetScore();
 	int GetLives();
+	void AddFuel();
+	sf::Sprite getSprite();
 };
 #endif

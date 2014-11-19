@@ -8,9 +8,10 @@
 #include <iostream>
 #include <fstream> 
 #include <random>
+#include "level.h"
 using namespace::std;
 /** We need this to easily convert between pixel and real-world coordinates*/
-static const float SCALE = 30.f;
+
 
 /** Create the base for the boxes to land */
 void CreateGround(b2World& World, float X, float Y);
@@ -23,15 +24,34 @@ int main()
 {
 	int playerx = 200;
 	int playery = 200;
+	string filepath = "C:/Users/Joseph/Documents/Visual Studio 2013/Projects/343projbetter/testmap.tmx";
 	RedirectIOToConsole();
-	/** Prepare the window */
-	sf::RenderWindow Window(sf::VideoMode(800, 600, 32), "Test");
-	Window.setFramerateLimit(60);
-	Window.setVerticalSyncEnabled(true);
 	/** Prepare the world */
 	b2Vec2 Gravity(0.f, 9.8f);
 	b2World World(Gravity);
-	CreateGround(World, 400.f, 500.f);
+	/** Prepare the window */
+	sf::RenderWindow Window(sf::VideoMode(1360, 760, 32), "Test");
+	Window.setFramerateLimit(60);
+	Window.setVerticalSyncEnabled(true);
+	sf::View view;
+	view.reset(sf::FloatRect(0.0f, 0.0f, 1360, 1360));
+	view.setViewport(sf::FloatRect(0.0f, 0.0f, 2.0f, 2.0f));
+	Level level;
+	level.LoadFromFile(filepath);
+	sf::Vector2i tileSize = level.GetTileSize();
+	std::vector<Object> collision = level.GetObjects("Collision");
+	for (int i = 0; i < collision.size(); i++)
+	{
+		b2BodyDef bodyDef;
+		bodyDef.type = b2_staticBody;
+		bodyDef.position.Set(collision[i].rect.left + tileSize.x / 2 * (collision[i].rect.width / tileSize.x - 1),
+			collision[i].rect.top + tileSize.y / 2 * (collision[i].rect.height / tileSize.y - 1));
+		b2Body* body = World.CreateBody(&bodyDef);
+		b2PolygonShape shape;
+		shape.SetAsBox(collision[i].rect.width /2, collision[i].rect.height /2);
+		body->CreateFixture(&shape, 1.0f);
+	}
+	
 	/** Prepare textures */
 	sf::Texture GroundTexture;
 	sf::Texture BoxTexture;
@@ -79,23 +99,25 @@ int main()
 		}
 		b2Vec2 vel = dynamicBody->GetLinearVelocity();
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
-			vel.x = 3.5;
+			vel.x = 5;
 			vel.y = dynamicBody->GetLinearVelocity().y;
 			dynamicBody->SetLinearVelocity(vel);
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
-			vel.x = -3.5;
+			vel.x = -5;
 			vel.y = dynamicBody->GetLinearVelocity().y;
 			dynamicBody->SetLinearVelocity(vel);
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
-			if (vel.y == 0)
-			dynamicBody->ApplyForce(b2Vec2(0, -500), dynamicBody->GetWorldCenter(), 0);
+			//if (vel.y == 0)
+			if (dynamicBody->GetLinearVelocity().y > -10){
+				dynamicBody->ApplyForce(b2Vec2(0, -200), dynamicBody->GetWorldCenter(), 0);
+			}
 		}
 		World.Step(1 / 60.f, 8, 3);
 		
 		Window.clear(sf::Color::White);
-		
+		level.Draw(Window);
 		int BodyCount = 0;
 		for (b2Body* BodyIterator = World.GetBodyList(); BodyIterator != 0; BodyIterator = BodyIterator->GetNext())
 		{
@@ -107,10 +129,7 @@ int main()
 				Sprite.setPosition(SCALE * BodyIterator->GetPosition().x, SCALE * BodyIterator->GetPosition().y);
 				Sprite.setRotation(BodyIterator->GetAngle() * 180 / b2_pi);
 				Window.draw(Sprite);
-				b2Vec2 pos = dynamicBody->GetPosition();
-				PlayerSprite.setPosition(SCALE * pos.x, SCALE * pos.y);
-
-				Window.draw(PlayerSprite);
+				
 				++BodyCount;
 			}
 			else
@@ -123,6 +142,12 @@ int main()
 				Window.draw(GroundSprite);
 			}
 		}
+		b2Vec2 pos = dynamicBody->GetPosition();
+		PlayerSprite.setPosition(SCALE * pos.x, SCALE * pos.y);
+
+		Window.draw(PlayerSprite);
+		//view.setCenter(pos.x, pos.y);
+		//Window.setView(view);
 		Window.display();
 	}
 

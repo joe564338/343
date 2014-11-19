@@ -4,6 +4,7 @@
 #include <vector>
 #include <map>
 #include <SFML/Graphics.hpp>
+static const float SCALE = 30.f;
 struct Object
 {
 	int GetPropertyInt(std::string name);
@@ -28,7 +29,7 @@ class Level
 {
 public:
 	bool LoadFromFile(std::string filename);
-	Object GetObject(std::string name);
+	Object GetObjectPlayer(std::string name);
 	std::vector<Object> GetObjects(std::string name);
 	void Draw(sf::RenderWindow &window);
 	sf::Vector2i GetTileSize();
